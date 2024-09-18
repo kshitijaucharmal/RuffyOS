@@ -1,5 +1,5 @@
 [package]
-name = "rustos"
+name = "ruffyos"
 version = "0.1.0"
 edition = "2021"
 authors = ["Kshitij Aucharmal <kshitijaucharmal21@gmail.com>"]
