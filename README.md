@@ -1,4 +1,4 @@
-# Rust OS
+# RuffyOS
 
 Trying to make an operating system in rust by following the 
 rust os tutorial/blog
