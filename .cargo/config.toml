@@ -8,3 +8,15 @@ rustflags = ["-C", "link-args=/ENTRY:_start /SUBSYSTEM:console"]
 
 [target.'cfg(target_os = "macos")']
 rustflags = ["-C", "link-args=-e __start -static -nostartfiles"]
+
+# https://os.phil-opp.com/minimal-rust-kernel/
+[unstable]
+# memset functions (rust version tried and tested) (normally links to C lib)
+# Therefore disabled by default
+build-std-features = ["compiler-builtins-mem"]
+# Makes cargo recompile the core library (which is precompiled on other target systems)
+build-std = ["core", "compiler_builtins"]
+
+# Set default target
+[build]
+target = "x86_64-ruffyos.json"
