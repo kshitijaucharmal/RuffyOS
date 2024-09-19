@@ -20,3 +20,9 @@ build-std = ["core", "compiler_builtins"]
 # Set default target
 [build]
 target = "x86_64-ruffyos.json"
+
+# To use the booimage's run functionality
+# Uses qemu to run the os
+# command used: qemu-system-x86_64 -drive format=raw,file=target/x86_64-ruffyos/debug/bootimage-ruffyos.bin
+[target.'cfg(target_os = "none")']
+runner = "bootimage runner"
