@@ -16,7 +16,7 @@ extra features I try to implement by myself in this
 ## Bare Bones
 - [x] [A Freestanding Rust Binary](https://os.phil-opp.com/freestanding-rust-binary/)
 - [x] [A minimal Rust kernel](https://os.phil-opp.com/minimal-rust-kernel/)
-- [ ] [VGA Text Mode](https://os.phil-opp.com/vga-text-mode/)
+- [x] [VGA Text Mode](https://os.phil-opp.com/vga-text-mode/)
 - [ ] [Unit and Integration testing](https://os.phil-opp.com/testing/)
 
 ## Interrupts

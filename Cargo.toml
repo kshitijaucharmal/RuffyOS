@@ -12,8 +12,19 @@ panic = "abort" # disable stack unwinding on panic
 [profile.release]
 panic = "abort" # disable stack unwinding on panic
 
-# Will not work on its own
 # https://github.com/rust-osdev/bootimage
 # This tool compiles the kernel and bootloader first, and then links them together to create a bootable disk image
 [dependencies]
+# Will not work on its own
 bootloader = "0.9"
+# So that the volatile memory operations are not optimized away
+volatile = "0.2.6"
+# Spinning Mutex: To add safe interior mutability (Basically make static writer mutable)
+spin = "0.5.2"
+
+# Use lazy static library 
+# static variables/structs are executed at compile time
+[dependencies.lazy_static]
+version = "1.0"
+features = ["spin_no_std"]
+
