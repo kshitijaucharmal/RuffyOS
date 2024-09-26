@@ -7,7 +7,7 @@
 // Only run when 'cargo test' called
 #[cfg(test)]
 pub fn test_runner(tests: &[&dyn Fn()]) {
-    println!("\nRunning {} tests", tests.len());
+    println!("\nRunning {} test(s)", tests.len());
     for test in tests {
         test();
     }

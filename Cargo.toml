@@ -12,6 +12,8 @@ authors = ["Kshitij Aucharmal <kshitijaucharmal21@gmail.com>"]
 [profile.release]
 panic = "abort" # disable stack unwinding on panic
 
+# TODO: Make my own BootLoader, and link it with the kernel to create bootable
+# Use for reference
 # https://github.com/rust-osdev/bootimage
 # This tool compiles the kernel and bootloader first, and then links them together to create a bootable disk image
 [dependencies]
@@ -28,3 +30,9 @@ spin = "0.5.2"
 version = "1.0"
 features = ["spin_no_std"]
 
+# Way to Exit QEMU from the guest System
+# This is only for exiting from QEMU, for normal exiting, we would need to
+# implement:
+# TODO: APM or ACPI Support
+[package.metadata.bootimage]
+test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04"]
