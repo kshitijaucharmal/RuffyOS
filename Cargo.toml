@@ -23,6 +23,10 @@ bootloader = "0.9"
 volatile = "0.2.6"
 # Spinning Mutex: To add safe interior mutability (Basically make static writer mutable)
 spin = "0.5.2"
+# Way to Exit QEMU from the guest System
+x86_64 = "0.14.2"
+# Using Serial Port with uart_16550 to send data from machine to console ( for debuggin )
+uart_16550 = "0.2.0"
 
 # Use lazy static library 
 # static variables/structs are executed at compile time
@@ -30,9 +34,11 @@ spin = "0.5.2"
 version = "1.0"
 features = ["spin_no_std"]
 
-# Way to Exit QEMU from the guest System
+# Only for QEMU
 # This is only for exiting from QEMU, for normal exiting, we would need to
 # implement:
 # TODO: APM or ACPI Support
 [package.metadata.bootimage]
 test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04"]
+# Setting up success code as 33 to let cargo test know
+test-success-exit-code = 33         # (0x10 << 1) | 1
